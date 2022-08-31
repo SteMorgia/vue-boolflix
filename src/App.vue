@@ -35,7 +35,8 @@ export default {
       axios.get(this.ApiUrl + '/search/tv?api_key=' + this.ApiKey + '&language=' + this.ApiLang + '&query=' + searchingText)
       .then(response => {
         this.seriesList = response.data.results
-      })
+      });
+      
     }
   }
 }
