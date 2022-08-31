@@ -8,7 +8,14 @@
                 {{film.vote_average}}
             </li>
         </ul>
-        
+        <ul>
+            <li v-for="(series,index) in seriesList" :key="index">
+                {{series.name}}
+                {{series.original_name}}
+                {{series.original_language}}
+                {{series.vote_average}}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -16,7 +23,8 @@
     export default {
         name: 'MyBody',
         props: {
-            filmList: Array
+            filmList: Array,
+            seriesList: Array
         }
     }
 </script>
