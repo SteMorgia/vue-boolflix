@@ -45,10 +45,10 @@ export default {
 <style lang="scss">
   @import '~@fortawesome/fontawesome-free/css/all.css';
   #app {
-    html {
-      padding:0;
-      margin:0;
-      box-sizing: border-box;
-    }
+      * {
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+      }
   }
 </style>

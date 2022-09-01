@@ -1,16 +1,21 @@
 <template>
     <div class="container">
-        <ul class="movies">
-            <li v-for="(film,index) in filmList" :key="index">
+        <section class="movies">
+            <div v-for="(film,index) in filmList" :key="index" class="moviesCard">
                 <img :src="'https://image.tmdb.org/t/p/w300' + film.poster_path" alt="">
-                {{film.title}}
-                {{film.original_title}}
-                <img :src="setFlag(film.original_language)">
-                <div>
-                    <i v-for="n in 5" class="fa-star" :class="(n > getVote(film.vote_average)) ? 'fa-regular':'fa-solid'" :key="n"></i>
+
+                <div class="info">
+                    <p>{{film.title}}</p>
+                    <p>{{film.original_title}}</p>
+                    <img :src="setFlag(film.original_language)">
+                    <div>
+                        <i v-for="n in 5" class="fa-star" :class="(n > getVote(film.vote_average)) ? 'fa-regular':'fa-solid'" :key="n"></i>
+                    </div>
                 </div>
-            </li>
-        </ul>
+                
+            </div>
+        </section>
+        
         <ul>
             <li v-for="(series,index) in seriesList" :key="index">
                 <img :src="'https://image.tmdb.org/t/p/w300' + series.poster_path" alt="">
@@ -54,6 +59,17 @@
     }
 </script>
 
-<style>
+<style scoped lang="scss">
+    .container {
+        background-color: rgb(88, 88, 88);
+        height:100%;
 
+        .movies {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            align-items:center;
+            padding:1rem;
+        }
+    }
 </style>
