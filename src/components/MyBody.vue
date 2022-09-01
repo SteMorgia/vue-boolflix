@@ -17,7 +17,9 @@
                 {{series.name}}
                 {{series.original_name}}
                 <img :src="setFlag(series.original_language)">
-                {{series.vote_average}}
+                <div>
+                    <i v-for="n in 5" class="fa-star" :class="(n > getVote(series.vote_average)) ? 'fa-regular':'fa-solid'" :key="n"></i>
+                </div>
             </li>
         </ul>
     </div>
