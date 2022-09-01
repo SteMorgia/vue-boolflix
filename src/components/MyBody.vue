@@ -73,7 +73,6 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap:wrap;
-        height:calc(100vh - 100px);
     }
     .flip-card {
         background-color: transparent;
@@ -93,6 +92,7 @@
             text-align: center;
             transition: transform 0.8s;
             transform-style: preserve-3d;
+            padding-bottom:140%;
         }
         .flip-card-front, .flip-card-back {
             position: absolute;
